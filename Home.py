@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import streamlit.components.v1 as components
-from urllib.parse import quote
 
 # Configuração da página
 st.set_page_config(page_title="Encontre aqui", layout="wide")
@@ -89,7 +88,6 @@ def tela_home():
         if tipo != "" and bairro != "":
             st.session_state.tipo = tipo
             st.session_state.bairro = bairro
-            st.session_state.historico.append(f"{tipo} - {bairro}")
             st.session_state.pagina = "resultados"
             st.rerun()
         else:
@@ -111,11 +109,11 @@ def tela_home():
 def tela_resultados():
     st.markdown("<h2 style='text-align: center;'>Resultados da busca</h2>", unsafe_allow_html=True)
 
-    # Simulando uma lista de estabelecimentos encontrados no banco
+    # Simulando estabelecimentos com coordenadas para o mapa
     estabelecimentos = [
-        {"nome": "Farmácia Vida", "endereco": "Av. Central, 123"},
-        {"nome": "Farmácia Bem Estar", "endereco": "Rua das Flores, 45"},
-        {"nome": "Farmácia Popular", "endereco": "Praça da Saúde, 10"},
+        {"nome": "Farmácia Vida", "endereco": "Av. Central, 123", "lat": -15.601410, "lon": -56.097891},
+        {"nome": "Farmácia Bem Estar", "endereco": "Rua das Flores, 45", "lat": -15.602310, "lon": -56.098800},
+        {"nome": "Farmácia Popular", "endereco": "Praça da Saúde, 10", "lat": -15.603210, "lon": -56.099700},
     ]
 
     st.markdown("##### Estabelecimentos encontrados:")
@@ -127,25 +125,12 @@ def tela_resultados():
         with col2:
             if st.button(f"Visitar {est['nome']}", key=est["nome"]):
                 st.session_state.historico.append(f"{est['nome']} - {est['endereco']}")
-                st.success(f"Você escolheu visitar: {est['nome']}")
 
-    #Mostrar mapa do Google
-    endereco_busca = f"{st.session_state.bairro}"
-    endereco_formatado = quote(endereco_busca)
-    mapa_url = f"https://www.google.com/maps/embed/v1/search?key=SUA_CHAVE_API&q={endereco_formatado}"
+    # Preparar dados para o mapa interativo
+    df = pd.DataFrame(estabelecimentos)
 
-    st.markdown("### 📍 Mapa da região")
-    components.html(f"""
-        <iframe
-            width="100%"
-            height="400"
-            style="border:0"
-            loading="lazy"
-            allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="{mapa_url}">
-        </iframe>
-    """, height=400)
+    st.markdown("### 📍 Mapa interativo da região")
+    st.map(df[['lat', 'lon']])
 
     # Botão para voltar
     if st.button("Voltar"):
