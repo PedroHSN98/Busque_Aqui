@@ -111,9 +111,66 @@ def tela_resultados():
 
     # Simulando estabelecimentos com coordenadas para o mapa
     estabelecimentos = [
-        {"nome": "Farmácia Vida", "endereco": "Av. Central, 123", "lat": -15.601410, "lon": -56.097891},
-        {"nome": "Farmácia Bem Estar", "endereco": "Rua das Flores, 45", "lat": -15.602310, "lon": -56.098800},
-        {"nome": "Farmácia Popular", "endereco": "Praça da Saúde, 10", "lat": -15.603210, "lon": -56.099700},
+        {
+            "nome": "Mercado Municipal Miguel Sutil",
+            "endereco": "Av. Generoso Ponce, 268, Centro, Cuiabá, MT, 78005-290",
+            "lat": -15.5985,
+            "lon": -56.0930
+        },
+        {
+            "nome": "Mercado do Porto (Antônio Moisés Nadaf)",
+            "endereco": "Bairro do Porto, Cuiabá, MT",
+            "lat": -15.6100,
+            "lon": -56.0800
+        },
+        {
+            "nome": "Supermercado Curió – Loja Cidade Alta",
+            "endereco": "Av. Jornalista Alves de Oliveira, 352, Cidade Alta, Cuiabá, MT",
+            "lat": -15.5820,
+            "lon": -56.1000
+        },
+        {
+            "nome": "Supermercado Curió – Loja Goiabeiras",
+            "endereco": "Av. São Sebastião, 06, Popular, Cuiabá, MT",
+            "lat": -15.5835,
+            "lon": -56.1300
+        },
+        {
+            "nome": "Mercearia Vitória",
+            "endereco": "Rua Cinquenta e Seis, 18, Pedra 90, Cuiabá, MT",
+            "lat": -15.6690,
+            "lon": -56.1200
+        },
+        {
+            "nome": "Farmácia Dia a Dia",
+            "endereco": "Av. Brasília, 146, Cuiabá, MT",
+            "lat": -15.5960,
+            "lon": -56.0990
+        },
+        {
+            "nome": "Farmácia Pague Menos (Centro Sul)",
+            "endereco": "Av. Isaac Póvoas, 807, Centro Sul, Cuiabá, MT",
+            "lat": -15.5955,
+            "lon": -56.0925
+        },
+        {
+            "nome": "Tave Pharma Cuiabá (Manipulação)",
+            "endereco": "Av. Presidente Marques, 54, Centro Sul, Cuiabá, MT",
+            "lat": -15.6000,
+            "lon": -56.0930
+        },
+        {
+            "nome": "Farmácia Criativa",
+            "endereco": "Av. Presidente Getúlio Vargas, 1203, Centro Norte, Cuiabá, MT",
+            "lat": -15.5760,
+            "lon": -56.0860
+        },
+        {
+            "nome": "Farmácia Cuiabá",
+            "endereco": "Av. Mario Palma, 760, Cuiabá, MT",
+            "lat": -15.5800,
+            "lon": -56.0900
+        }
     ]
 
     st.markdown("##### Estabelecimentos encontrados:")
