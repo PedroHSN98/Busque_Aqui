@@ -5,6 +5,22 @@ O projeto consiste em um chatbot inteligente que auxilia os usuários a localiza
 
 
 
+## Funcionalidades
+
+-> Busca de estabelecimentos por bairro desejado
+
+
+
+## Tecnologias
+
+-> Linguagens: Python
+
+-> Frameworks: Streamlit
+
+-> Banco de dados: SQLite
+
+
+
 ## Bibliotecas
 
 -> Para instalação do streamlit: pip install streamlit
