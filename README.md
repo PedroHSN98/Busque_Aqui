@@ -1,4 +1,4 @@
-# Busque Aqui
+# Encontre Aqui
 
 ## Objetivo
 O projeto consiste em um chatbot inteligente que auxilia os usuários a localizar estabelecimentos como lojas, mercados, farmácias, hospitais, óticas, entre outros, com base no bairro informado. O sistema retornará dados reais de localização de forma clara, prática e rápida.
