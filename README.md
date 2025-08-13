@@ -7,6 +7,7 @@ O projeto consiste em um chatbot inteligente que auxilia os usuários a localiza
 ## Bibliotecas
 
 -> Para instalação do atreamlit: pip install streamlit
+
 -> Para instalação do pandas: pip install streamlit pydeck pandas
 
 
