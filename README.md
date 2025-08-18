@@ -30,6 +30,6 @@ O projeto consiste em um chatbot inteligente que auxilia os usuários a localiza
 
 
 ## Para excutar o arquivo Home.py
--> Para dar o comando no visual code e iniciar o programa: streamlit run Home.py
+-> Para dar o comando no visual code e iniciar o programa: python -m streamlit run app.py
 
 
