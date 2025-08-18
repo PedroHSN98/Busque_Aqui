@@ -30,6 +30,25 @@ O projeto consiste em um chatbot inteligente que auxilia os usuários a localiza
 
 
 ## Para excutar o arquivo Home.py
--> Para dar o comando no visual code e iniciar o programa: python -m streamlit run app.py
+
+-> Comando no visual code para iniciar o programa: python -m streamlit run app.py
+
+
+
+## Para vizualizar o banco
+
+ O banco pode ser vizualizado através de duas opções:
+ 
+-> No VS code: Instalar a extensão SQLite Viewer
+
+-> Instalar o programa DB Browser for SQLite e após a instalação abrir o arquivo "estabelecimentos.db"
+
+
+
+
+
+
+
+
 
 
