@@ -1,13 +1,31 @@
 import streamlit as st
 import pandas as pd
-from data.estabelecimentos import ESTABELECIMENTOS
+import sqlite3
 from utils.mapa import make_deck
 
 
+# ================================
+# Funções de acesso ao banco
+# ================================
+def _get_connection():
+    return sqlite3.connect("data/estabelecimentos.db", check_same_thread=False)
+
 def _filtrar_por_tipo(tipo_selecionado):
+    conn = _get_connection()
+    cursor = conn.cursor()
+
     if tipo_selecionado and tipo_selecionado != "Outros":
-        return [e for e in ESTABELECIMENTOS if e["categoria"] == tipo_selecionado]
-    return ESTABELECIMENTOS.copy()
+        cursor.execute("SELECT nome, endereco, lat, lon, categoria FROM estabelecimentos WHERE categoria = ?", (tipo_selecionado,))
+    else:
+        cursor.execute("SELECT nome, endereco, lat, lon, categoria FROM estabelecimentos")
+
+    rows = cursor.fetchall()
+    conn.close()
+
+    return [
+        {"nome": r[0], "endereco": r[1], "lat": r[2], "lon": r[3], "categoria": r[4]}
+        for r in rows
+    ]
 
 
 def _garantir_selecionado_na_lista(filtrados, selecionado):
@@ -15,7 +33,8 @@ def _garantir_selecionado_na_lista(filtrados, selecionado):
         return filtrados
     presente = any(
         (abs(e["lat"] - selecionado["lat"]) < 1e-9 and abs(e["lon"] - selecionado["lon"]) < 1e-9)
-        or (e["nome"] == selecionado["nome"] and e["endereco"] == selecionado["endereco"]) for e in filtrados
+        or (e["nome"] == selecionado["nome"] and e["endereco"] == selecionado["endereco"]) 
+        for e in filtrados
     )
     if not presente:
         return filtrados + [selecionado]

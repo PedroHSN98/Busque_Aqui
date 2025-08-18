@@ -1,10 +1,17 @@
 import streamlit as st
+import sqlite3
 from ui.home import tela_home
 from ui.resultados import tela_resultados
 from ui.logo import render_logo
 from ui.style import inject_global_css
 
-
+# =======================
+# FUNÇÃO DE BANCO DE DADOS
+# =======================
+def get_db_connection():
+    conn = sqlite3.connect("data/estabelecimentos.db")  # caminho do seu banco
+    conn.row_factory = sqlite3.Row  # permite acessar colunas por nome
+    return conn
 
 # =======================
 # CONFIG DA PÁGINA
