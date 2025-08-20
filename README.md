@@ -1,4 +1,4 @@
-# Encontre Aqui
+# 📌 Encontre Aqui
 
 
 ## 📖 Descrição
@@ -23,8 +23,11 @@ O objetivo é fornecer informações de forma clara, prática e rápida, além d
 ## 🚀 Funcionalidades
 
 ✅Busca de estabelecimentos por tipo e bairro desejado;
+
 ✅Visualização dos estabelecimentos encontrados em mapa interativo;
+
 ✅Histórico das últimas pesquisas;
+
 ✅Interface simples e responsiva com Streamlit.
 
 
@@ -66,9 +69,9 @@ O objetivo é fornecer informações de forma clara, prática e rápida, além d
 
 O projeto utiliza um banco SQLite e pode ser vizualizado através de duas formas:
  
--> No VS code: Instalar a extensão SQLite Viewer
+-> No VS code: Instalar a extensão **SQLite Viewer**
 
--> Instalar o programa DB Browser for SQLite e após a instalação abrir o arquivo "estabelecimentos.db"
+-> Instalar o programa DB Browser for SQLite e após a instalação abrir o arquivo **estabelecimentos.db**
 
 
 ## 📜 Licença
