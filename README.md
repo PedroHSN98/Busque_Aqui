@@ -41,13 +41,14 @@ O objetivo é fornecer informações de forma clara, prática e rápida, além d
 -> Banco de dados: SQLite
 
 -> Bibliotecas principais: 
-   -streamlit → interface web
 
-   -pandas → manipulação de dados
+         -streamlit → interface web
 
-   -pydeck → visualização geográfica avançada (mapas interativos)
+         -pandas → manipulação de dados
 
-   -urllib → manipulação de URLs
+         -pydeck → visualização geográfica avançada (mapas interativos)
+
+         -urllib → manipulação de URLs
 
 
 
