@@ -41,6 +41,7 @@ O objetivo é fornecer informações de forma clara, prática e rápida, além d
 -> Banco de dados: SQLite
 
 -> Bibliotecas principais: 
+
     -streamlit → interface web
 
     -pandas → manipulação de dados
